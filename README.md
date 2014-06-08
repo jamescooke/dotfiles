@@ -30,6 +30,10 @@ If happy then run full thing:
 This patches in the dot files plus sets `dotfiles` to run from the its config
 file which it tracks itself.
 
+Confirm that everything is now nicely tracked and the config file is wired in:
+
+    dotfiles --list
+
 
 ## Thanks
 

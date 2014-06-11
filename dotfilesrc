@@ -2,6 +2,6 @@
 repository = ~/dotfiles
 ignore = [
     'README.md',
-    'LICENSE',
+    'UNLICENSE',
     '.git',
     '.gitignore']

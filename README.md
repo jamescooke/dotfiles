@@ -12,27 +12,10 @@ that I might use less than once a week or so.
 
 ## Set up
 
-This uses python [dotfiles](https://github.com/jbernard/dotfiles).
+This uses python
+[chattydotfiles](https://github.com/jamescooke/chattydotfiles).
 
-    sudo pip install dotfiles
-    git clone git@github.com/jamescooke/dotfiles
-
-There is a `.dotfilesrc` in the repository itself so there is a touch of
-patching to get it to work first time. Do a dry run first to see what'll be
-overridden and changed.
-
-    dotfiles --config=dotfiles/dotfilesrc --sync --dry-run
-
-If happy then run full thing:
-
-    dotfiles --config=dotfiles/dotfilesrc --sync
-
-This patches in the dot files plus sets `dotfiles` to run from the its config
-file which it tracks itself.
-
-Confirm that everything is now nicely tracked and the config file is wired in:
-
-    dotfiles --list
+Info in here soon about how to get chatty to work with this repo.
 
 
 ## Thanks

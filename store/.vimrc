@@ -51,6 +51,10 @@ filetype on
 filetype indent on
 filetype plugin on
 
+" Turn on spelling for markdown and rst
+autocmd FileType mkd setlocal spell
+autocmd FileType rst setlocal spell
+
 " Open files - Whitespace below is important so you can type the file name
 " directly after the ctrl+j
 nnoremap <C-j> :tabe 

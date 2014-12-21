@@ -1,6 +1,10 @@
-" TODO Switch out to vundle
-runtime config/bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect('~/.vim/config/bundle/{}')
+set nocompatible                " vim, not vi
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Bundle 'tpope/vim-vinegar'
+call vundle#end()
 
 syntax on
 set path=**                     " Search the files under the run location.
@@ -9,7 +13,6 @@ set suffixesadd=.py             " Look for Python files.
 set ruler                       " set line number on the bar
 set autoread                    " watch file for changes
 set number
-set nocompatible                " vim, not vi
 
 set wildmode=full                   " go mental
 set wildmenu                        " show complete options in menu

@@ -72,6 +72,14 @@ xterm*|rxvt*)
     ;;
 esac
 
+
+# Automatically start Tmux
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+
+# --------------------------------------------------------------------- ALIASES
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"

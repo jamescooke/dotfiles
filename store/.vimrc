@@ -4,6 +4,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Bundle 'tpope/vim-vinegar'
+Bundle 'nvie/vim-flake8'
+Bundle 'plasticboy/vim-markdown'
 call vundle#end()
 
 syntax on
@@ -57,6 +59,9 @@ filetype plugin on
 " Turn on spelling for markdown and rst
 autocmd FileType mkd setlocal spell
 autocmd FileType rst setlocal spell
+
+" Open out some folds by default - finger in the air value
+set foldlevel=2
 
 " Open files - Whitespace below is important so you can type the file name
 " directly after the ctrl+j

@@ -17,6 +17,17 @@ This uses python
 
 Info in here soon about how to get chatty to work with this repo.
 
+### Vim setup
+
+The `.vimrc` file uses [Vundle](https://github.com/gmarik/Vundle.vim) and needs
+to be wired in when installing from scratch on a clean machine. After doing
+`chattydotfiles` for the first time, then:
+
+```sh
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+```
+
 
 ## Thanks
 

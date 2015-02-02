@@ -11,3 +11,5 @@
 
 [diff]
     tool = meld
+[push]
+    default = simple

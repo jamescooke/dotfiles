@@ -6,6 +6,7 @@ Plugin 'gmarik/Vundle.vim'
 Bundle 'tpope/vim-vinegar'
 Bundle 'nvie/vim-flake8'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'chase/vim-ansible-yaml'
 call vundle#end()
 
 syntax on

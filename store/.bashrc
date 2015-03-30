@@ -96,6 +96,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias beep='paplay /usr/share/sounds/ubuntu/stereo/system-ready.ogg'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

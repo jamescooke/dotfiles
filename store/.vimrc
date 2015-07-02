@@ -53,6 +53,10 @@ autocmd InsertLeave * :setlocal hlsearch
 set list                        " Show all whiteshit chars
 set listchars=eol:¬,tab:▷\ ,    " Show end of lines as '¬', tabs as arrows
 
+set nrformats-=octal            " Turn off octal increment / decrement so that
+                                " numbers with leading zeros won't go from 007
+                                " to 010
+
 filetype on
 filetype indent on
 filetype plugin on

@@ -72,11 +72,10 @@ xterm*|rxvt*)
     ;;
 esac
 
-
-# Automatically start Tmux
-# If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+# Automatically start Tmux if it exists and not running over ssh
+if [ -z "$SSH_CONNECTION" ]; then
+    [[ -z "$TMUX" ]] && exec tmux
+fi
 
 # --------------------------------------------------------------------- ALIASES
 

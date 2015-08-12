@@ -78,5 +78,8 @@ nnoremap <C-j> :tabe
 " Turn off escape to learn the new pattern
 :inoremap <esc> <nop>
 
+" Turn off Ex mode
+nnoremap Q <nop>
+
 set colorcolumn=80              " Show the 80th char column.
 highlight ColorColumn ctermbg=5

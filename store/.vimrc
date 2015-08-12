@@ -17,10 +17,13 @@ set ruler                       " set line number on the bar
 set autoread                    " watch file for changes
 set number
 
-set wildmode=full                   " go mental
-set wildmenu                        " show complete options in menu
-set wildignore=*.pyc                " ignore pyc files.
-let g:netrw_list_hide= '.*\.pyc$'   " hide pyc files from file lists
+set wildmode=longest,full           " Complete more readline-like. Longest
+                                    " first, then full tab complete.
+set wildmenu                        " Show complete options in menu. IMO this
+                                    " is a good replacement for 'list' in
+                                    " wildmode.
+set wildignore=*.pyc                " Ignore pyc files.
+let g:netrw_list_hide= '.*\.pyc$'   " Hide pyc files from file lists.
 
 set autoindent nosmartindent    " auto/smart indent
 set smarttab

@@ -3,6 +3,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vinegar'
 Bundle 'nvie/vim-flake8'
 Bundle 'plasticboy/vim-markdown'

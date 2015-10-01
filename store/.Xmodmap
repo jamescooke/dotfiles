@@ -9,3 +9,5 @@ add control = Control_L Control_R
 keycode 97 = 0x5c   0x7c
 ! Make 'calc' key be a pound sterling sign (£)
 keycode 132 = 0xa3
+! keycode 108 is right alt on sprobox Alt_R
+keycode 108 = Alt_R

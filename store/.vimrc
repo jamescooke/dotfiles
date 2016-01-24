@@ -67,6 +67,7 @@ filetype plugin on
 
 " Turn on spelling for gitcommit messages, markdown and rst
 autocmd FileType gitcommit setlocal spell
+autocmd FileType markdown setlocal spell
 autocmd FileType mkd setlocal spell
 autocmd FileType rst setlocal spell
 

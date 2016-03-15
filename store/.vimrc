@@ -18,6 +18,7 @@ set ruler                       " set line number on the bar
 set autoread                    " watch file for changes
 set number
 
+set showcmd                         " Show current command in bottom bar
 set wildmode=longest,full           " Complete more readline-like. Longest
                                     " first, then full tab complete.
 set wildmenu                        " Show complete options in menu. IMO this

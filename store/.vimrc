@@ -73,6 +73,9 @@ autocmd FileType markdown setlocal spell
 autocmd FileType mkd setlocal spell
 autocmd FileType rst setlocal spell
 
+" Zeal simple binding experiment
+nnoremap gz :!zeal "<cword>"&<CR>&<CR>
+
 " Open out some folds by default - finger in the air value
 set foldlevel=2
 

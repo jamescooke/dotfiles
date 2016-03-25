@@ -32,6 +32,7 @@ set smarttab
 set expandtab                   " expand tabs to spaces
 set shiftwidth=4
 set softtabstop=4
+set nowrap                      " Do not wrap text by default
 
 set undolevels=1000
 set shell=bash

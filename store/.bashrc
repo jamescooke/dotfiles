@@ -79,6 +79,9 @@ if [ -z "$SSH_CONNECTION" ]; then
     [[ -z "$TMUX" ]] && exec tmux
 fi
 
+# Switch of ^s flow control
+stty -ixon
+
 # --------------------------------------------------------------------- ALIASES
 
 # enable color support of ls and also add handy aliases

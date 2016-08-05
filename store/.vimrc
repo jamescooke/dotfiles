@@ -84,6 +84,9 @@ nnoremap <C-j> :tabe
 " Turn off escape to learn the new pattern
 :inoremap <esc> <nop>
 
+" Use a command for isort
+command! -range=% Isort :<line1>,<line2>! isort -
+
 " Turn off Ex mode
 nnoremap Q <nop>
 

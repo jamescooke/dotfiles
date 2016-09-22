@@ -87,6 +87,9 @@ nnoremap <C-j> :tabe
 " Use a command for isort
 command! -range=% Isort :<line1>,<line2>! isort -
 
+" Output today's date in reverse order
+command Today pu=strftime('%Y/%m/%d')
+
 " Turn off Ex mode
 nnoremap Q <nop>
 

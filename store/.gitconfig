@@ -6,9 +6,18 @@
     editor = /usr/bin/vim
 
 [alias]
+
+    # Git graphs
     lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+
+    # Turn on hosting on local network
     host = daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
+
+    # Find last commit on provided file and fix it with current diff
+    fixup-latest = !git commit --fixup=`git log -1 --pretty=format:%h -- $1` -- $1
+
+    # General shortcuts for common tasks
     fp = fetch -p
     cv = commit -v
     cb = checkout -b

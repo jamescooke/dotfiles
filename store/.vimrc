@@ -1,14 +1,15 @@
 set nocompatible                " vim, not vi
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-vinegar'
-Bundle 'nvie/vim-flake8'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'chase/vim-ansible-yaml'
-call vundle#end()
+
+call plug#begin()
+Plug 'tpope/vim-vinegar'
+Plug 'nvie/vim-flake8'
+Plug 'chase/vim-ansible-yaml'
+Plug 'tpope/vim-unimpaired'
+Plug 'gorkunov/smartpairs.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'plasticboy/vim-markdown'
+call plug#end()
 
 syntax on
 set path=**                     " Search the files under the run location.
@@ -88,7 +89,7 @@ nnoremap <C-j> :tabe
 command! -range=% Isort :<line1>,<line2>! isort -
 
 " Output today's date in reverse order
-command Today pu=strftime('%Y/%m/%d')
+command! Today pu=strftime('%Y/%m/%d')
 
 " Turn off Ex mode
 nnoremap Q <nop>

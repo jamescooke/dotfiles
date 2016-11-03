@@ -2,13 +2,15 @@ set nocompatible                " vim, not vi
 filetype off
 
 call plug#begin()
-Plug 'tpope/vim-vinegar'
-Plug 'nvie/vim-flake8'
-Plug 'chase/vim-ansible-yaml'
-Plug 'tpope/vim-unimpaired'
-Plug 'gorkunov/smartpairs.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'chase/vim-ansible-yaml'
+Plug 'gorkunov/smartpairs.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'nvie/vim-flake8'
 Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 syntax on

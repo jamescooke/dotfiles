@@ -19,13 +19,11 @@ Info in here soon about how to get chatty to work with this repo.
 
 ### Vim setup
 
-The `.vimrc` file uses [Vundle](https://github.com/gmarik/Vundle.vim) and needs
-to be wired in when installing from scratch on a clean machine. After doing
-`chattydotfiles` for the first time, then:
+Vim is configured to use [Plug](https://github.com/junegunn/vim-plug). After
+doing `chattydotfiles` for the first time:
 
 ```sh
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 

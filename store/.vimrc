@@ -76,6 +76,13 @@ autocmd FileType markdown setlocal spell
 autocmd FileType mkd setlocal spell
 autocmd FileType rst setlocal spell
 
+" FZF settings
+imap <c-x><c-o> <plug>(fzf-complete-line)
+
+" Git Gutter settings
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
 " Open out some folds by default - finger in the air value
 set foldlevel=2
 

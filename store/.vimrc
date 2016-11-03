@@ -3,6 +3,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vinegar'
 Bundle 'nvie/vim-flake8'
@@ -16,7 +17,8 @@ set suffixesadd=.py             " Look for Python files.
 
 set ruler                       " set line number on the bar
 set autoread                    " watch file for changes
-set number
+set number                      " Shows current line number, not just 0 (with relative)
+set relativenumber              " Use 'newish' relative line numbering
 
 set showcmd                         " Show current command in bottom bar
 set wildmode=longest,full           " Complete more readline-like. Longest

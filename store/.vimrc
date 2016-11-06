@@ -9,6 +9,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'nvie/vim-flake8'
 Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 call plug#end()
@@ -54,6 +55,10 @@ set incsearch                   " Incremental searching
 set hlsearch                    " Highlight search results
 set ignorecase smartcase        " Case insensitive searching when the string
                                 " is lower case
+
+set diffopt+=vertical           " Force git diffs to be shown vertically, even
+                                " on narrow windows.
+
 " Turn off highlighting when dropping into insert mode, and turn back on again
 " when leaving
 autocmd InsertEnter * :setlocal nohlsearch
@@ -65,6 +70,14 @@ set listchars=eol:¬,tab:▷\ ,    " Show end of lines as '¬', tabs as arrows
 set nrformats-=octal            " Turn off octal increment / decrement so that
                                 " numbers with leading zeros won't go from 007
                                 " to 010
+
+set foldlevel=2                 " Open out some folds by default - finger in
+                                " the air value
+
+set colorcolumn=80              " Show the 80th char column.
+highlight ColorColumn ctermbg=5
+
+let mapleader = " "             " Try out space as leader
 
 filetype on
 filetype indent on
@@ -78,13 +91,19 @@ autocmd FileType rst setlocal spell
 
 " FZF settings
 imap <c-x><c-o> <plug>(fzf-complete-line)
+map <leader>f :Files<cr>
+map <leader>g :GFiles<cr>
 
 " Git Gutter settings
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
-" Open out some folds by default - finger in the air value
-set foldlevel=2
+" Copy current visual to system clipboard
+map <leader>c "+y
+" Wrap line to paragraph
+map <leader>w Vgq
+" Turn off highlighting
+map <leader>n :noh<cr>
 
 " Open files - Whitespace below is important so you can type the file name
 " directly after the ctrl+j
@@ -103,6 +122,3 @@ command! Today pu=strftime('%Y/%m/%d')
 
 " Turn off Ex mode
 nnoremap Q <nop>
-
-set colorcolumn=80              " Show the 80th char column.
-highlight ColorColumn ctermbg=5

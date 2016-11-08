@@ -93,6 +93,8 @@ autocmd FileType rst setlocal spell
 imap <c-x><c-o> <plug>(fzf-complete-line)
 map <leader>f :Files<cr>
 map <leader>g :GFiles<cr>
+map <leader>b :Buffers<cr>
+map <leader>t :Tags<cr>
 
 " Git Gutter settings
 let g:gitgutter_realtime = 0

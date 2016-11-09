@@ -4,11 +4,13 @@ filetype off
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'chase/vim-ansible-yaml'
+Plug 'godlygeek/tabular'
 Plug 'gorkunov/smartpairs.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'nvie/vim-flake8'
 Plug 'plasticboy/vim-markdown'
+Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
@@ -18,6 +20,7 @@ syntax on
 set path=**                     " Search the files under the run location.
 set suffixesadd=.py             " Look for Python files.
 
+set encoding=utf-8
 set ruler                       " set line number on the bar
 set autoread                    " watch file for changes
 set number                      " Shows current line number, not just 0 (with relative)
@@ -71,8 +74,7 @@ set nrformats-=octal            " Turn off octal increment / decrement so that
                                 " numbers with leading zeros won't go from 007
                                 " to 010
 
-set foldlevel=2                 " Open out some folds by default - finger in
-                                " the air value
+set foldlevel=99                " Open out all folds by default.
 
 set colorcolumn=80              " Show the 80th char column.
 highlight ColorColumn ctermbg=5
@@ -91,14 +93,13 @@ autocmd FileType rst setlocal spell
 
 " FZF settings
 imap <c-x><c-o> <plug>(fzf-complete-line)
+map <leader>b :Buffers<cr>
 map <leader>f :Files<cr>
 map <leader>g :GFiles<cr>
-map <leader>b :Buffers<cr>
 map <leader>t :Tags<cr>
 
-" Git Gutter settings
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
+" SimpylFold settings
+let g:SimpylFold_docstring_preview = 1
 
 " Copy current visual to system clipboard
 map <leader>c "+y
@@ -106,6 +107,13 @@ map <leader>c "+y
 map <leader>w Vgq
 " Turn off highlighting
 map <leader>n :noh<cr>
+" Next and previous tabs, double h is used because gitgutter hunks are on
+" leader h, stops mistaken leader h combos changing the tab.
+map <leader>hh gT
+map <leader>l gt
+" Sort and isort - can be used with selection or whole file
+map <leader>i :Isort<cr>
+map <leader>s :sort<cr>
 
 " Open files - Whitespace below is important so you can type the file name
 " directly after the ctrl+j

@@ -82,6 +82,9 @@ fi
 # Switch of ^s flow control
 stty -ixon
 
+# Use FZF with exact matching, rather than fuzzy
+FZF_DEFAULT_OPTS="--exact"
+
 # --------------------------------------------------------------------- ALIASES
 
 # enable color support of ls and also add handy aliases

@@ -79,7 +79,7 @@ if [ -z "$SSH_CONNECTION" ]; then
     [[ -z "$TMUX" ]] && exec tmux
 fi
 
-# Switch of ^s flow control
+# Switch off ^s flow control
 stty -ixon
 
 # Use FZF with exact matching, rather than fuzzy

@@ -1,4 +1,3 @@
--f .git/tags
 -R
 --exclude=*.js
 --exclude=.git/*

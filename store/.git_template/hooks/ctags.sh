@@ -1,4 +1,7 @@
 #!/bin/bash
 set -e
+
 cd `git rev-parse --git-dir`/..
-ctags
+trap 'rm -f .git/$$.tags' EXIT
+ctags -f .git/$$.tags
+mv .git/$$.tags .git/tags

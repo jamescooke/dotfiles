@@ -33,6 +33,8 @@ set wildmenu                        " Show complete options in menu. IMO this
 set wildignore=*.pyc                " Ignore pyc files.
 let g:netrw_list_hide= '.*\.pyc$'   " Hide pyc files from file lists.
 
+set complete-=i                 " Do not use included files for completion
+
 set autoindent nosmartindent    " auto/smart indent
 set smarttab
 set expandtab                   " expand tabs to spaces

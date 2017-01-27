@@ -7,15 +7,18 @@ bits of config from machine to machine without worrying about how they got
 there.
 
 These are notes to myself because I'm very forgetful when it comes to things
-that I might use less than once a week or so.
+that I might use less than once a ~~week~~ month or so.
 
 
 ## Set up
 
-This uses python
-[chattydotfiles](https://github.com/jamescooke/chattydotfiles).
+I'm using GNU `stow` to manage links to dotfiles.
 
-Info in here soon about how to get chatty to work with this repo.
+    $ sudo apt-get install stow
+    $ git clone git@github.com:jamescooke/dotfiles.git
+    $ cd dotfiles
+    $ stow -t ~ store
+
 
 ### Vim setup
 
@@ -25,6 +28,10 @@ doing `chattydotfiles` for the first time:
 ```sh
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
+
+You can find out more about [my Vim configuration in this
+post](http://jamescooke.info/my-vim-setup-for-python-development.html), mainly
+for working with Python.
 
 
 ## Thanks

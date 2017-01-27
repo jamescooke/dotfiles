@@ -93,6 +93,7 @@ autocmd FileType rst setlocal spell
 
 " FZF settings
 imap <c-x><c-o> <plug>(fzf-complete-line)
+map <leader>a :Ag<cr>
 map <leader>b :Buffers<cr>
 map <leader>f :Files<cr>
 map <leader>g :GFiles<cr>
@@ -101,6 +102,9 @@ map <leader>t :Tags<cr>
 " SimpylFold settings
 let g:SimpylFold_docstring_preview = 1
 
+" Hop to next and previous white line
+map <leader>j }
+map <leader>k {
 " Copy current visual to system clipboard
 map <leader>c "+y
 " Wrap line to paragraph

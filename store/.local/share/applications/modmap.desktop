@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Activate XModMap
-Type=Application
-Icon=ubuntu-screensaver
-Exec=/usr/bin/xmodmap /home/james/.Xmodmap
-Terminal=false

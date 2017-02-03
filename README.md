@@ -23,10 +23,10 @@ I'm using GNU `stow` to manage links to dotfiles.
 ### Vim setup
 
 Vim is configured to use [Plug](https://github.com/junegunn/vim-plug). After
-doing `chattydotfiles` for the first time:
+running `stow`, then:
 
 ```sh
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 You can find out more about [my Vim configuration in this

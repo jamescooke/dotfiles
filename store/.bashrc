@@ -83,9 +83,6 @@ fi
 # Switch off ^s flow control
 stty -ixon
 
-# Use FZF with exact matching, rather than fuzzy
-FZF_DEFAULT_OPTS="--exact"
-
 # --------------------------------------------------------------------- ALIASES
 
 # enable color support of ls and also add handy aliases
@@ -133,5 +130,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Run FZF in a tmux split when possible
+export FZF_TMUX=1
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

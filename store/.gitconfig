@@ -18,6 +18,7 @@
     cv = commit -v
     cb = checkout -b
     bd = branch -d
+    cane = commit --amend --no-edit
 
 [diff]
     tool = meld

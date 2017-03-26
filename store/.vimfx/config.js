@@ -5,6 +5,7 @@ let options = {
         "https://www.fastmail.com/calendar/*",
         "https://www.fastmail.com/contacts/*",
         "https://www.fastmail.com/mail/*",
+        "https://docs.google.com/*",  // Does not play well with GDocs
     ].join(' '),
     "config_file_directory": "~/.vimfx/",
 

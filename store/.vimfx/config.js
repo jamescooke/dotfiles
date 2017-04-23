@@ -6,6 +6,7 @@ let options = {
         "https://www.fastmail.com/contacts/*",
         "https://www.fastmail.com/mail/*",
         "https://docs.google.com/*",  // Does not play well with GDocs
+        "*.mp3",    // Use Firefox's shortcuts for playing media files
     ].join(' '),
     "config_file_directory": "~/.vimfx/",
 

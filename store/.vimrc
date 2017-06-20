@@ -95,9 +95,12 @@ autocmd FileType rst setlocal spell
 imap <c-x><c-o> <plug>(fzf-complete-line)
 map <leader>a :Ag<cr>
 map <leader>b :Buffers<cr>
-map <leader>f :Files<cr>
+map <leader>F :Files<cr>
 map <leader>g :GFiles<cr>
 map <leader>t :Tags<cr>
+
+" vim-flake8
+autocmd FileType python map <buffer> <leader>f :call Flake8()<cr>
 
 " SimpylFold settings
 let g:SimpylFold_docstring_preview = 1

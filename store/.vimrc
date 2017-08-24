@@ -121,6 +121,8 @@ map <leader>l gt
 " Sort and isort - can be used with selection or whole file
 map <leader>i :Isort<cr>
 map <leader>s :sort<cr>
+" Leader for yapf
+autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr><C-o>
 
 " Open files - Whitespace below is important so you can type the file name
 " directly after the ctrl+j

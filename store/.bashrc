@@ -105,6 +105,7 @@ alias beep='paplay /usr/share/sounds/ubuntu/stereo/system-ready.ogg'
 alias mtr='mtr -t'
 alias gfiles='git status -s | ag "[^\s]+$" -o'
 alias vdiff='vi $(gfiles)'
+alias vvv='source venv/bin/activate'
 
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.

@@ -141,3 +141,6 @@ command! Today pu=strftime('%Y/%m/%d')
 
 " Turn off Ex mode
 nnoremap Q <nop>
+
+" Macro --- convert unittest assert equal to simple assert ==
+let @e = '^cf(assert jkf,xi ==jkA€kbjkj'

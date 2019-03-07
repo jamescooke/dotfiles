@@ -12,6 +12,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 syntax on
@@ -118,29 +119,23 @@ map <leader>n :noh<cr>
 " leader h, stops mistaken leader h combos changing the tab.
 map <leader>hh gT
 map <leader>l gt
-" Sort and isort - can be used with selection or whole file
-map <leader>i :Isort<cr>
+" Sort selection or whole file
 map <leader>s :sort<cr>
-" Leader for yapf
-autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr><C-o>
-
-" Open files - Whitespace below is important so you can type the file name
-" directly after the ctrl+j
-nnoremap <C-j> :tabe 
-
+" Output today's date in reverse order
+command! Today pu=strftime('%Y/%m/%d')
 " Make jk work as escape
 :inoremap jk <esc>
 " Turn off escape to learn the new pattern
 :inoremap <esc> <nop>
-
-" Use a command for isort
-command! -range=% Isort :<line1>,<line2>! isort -
-
-" Output today's date in reverse order
-command! Today pu=strftime('%Y/%m/%d')
-
 " Turn off Ex mode
 nnoremap Q <nop>
 
+" --- python dev ---
+" Leader for yapf
+autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr><C-o>
+" isort - can be used with selection or whole file
+autocmd FileType python map <leader>i :Isort<cr>
+" Use a command for isort
+command! -range=% Isort :<line1>,<line2>! isort -
 " Macro --- convert unittest assert equal to simple assert ==
 let @e = '^cf(assert jkf,xi ==jkA€kbjkj'

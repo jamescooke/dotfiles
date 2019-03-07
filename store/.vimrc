@@ -100,8 +100,6 @@ map <leader>F :Files<cr>
 map <leader>g :GFiles<cr>
 map <leader>t :Tags<cr>
 
-" vim-flake8
-autocmd FileType python map <buffer> <leader>f :call Flake8()<cr>
 
 " SimpylFold settings
 let g:SimpylFold_docstring_preview = 1
@@ -131,11 +129,19 @@ command! Today pu=strftime('%Y/%m/%d')
 nnoremap Q <nop>
 
 " --- python dev ---
+" vim-flake8
+autocmd FileType python map <buffer> <leader>f :call Flake8()<cr>
 " Leader for yapf
-autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr><C-o>
+autocmd FileType python nnoremap <leader>y :0,$!yapf<cr><C-o>
 " isort - can be used with selection or whole file
 autocmd FileType python map <leader>i :Isort<cr>
 " Use a command for isort
 command! -range=% Isort :<line1>,<line2>! isort -
 " Macro --- convert unittest assert equal to simple assert ==
 let @e = '^cf(assert jkf,xi ==jkA€kbjkj'
+
+" --- go dev ---
+" Lead for formatting
+autocmd FileType go nnoremap <leader>f :GoFmt<cr>
+autocmd FileType go nnoremap <leader>y :GoLint<cr>
+autocmd FileType go nnoremap <leader>t :GoTest<cr>

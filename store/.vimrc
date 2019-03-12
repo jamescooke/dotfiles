@@ -15,6 +15,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 call plug#end()
 
+let g:go_version_warning = 0
+
 syntax on
 set path=**                     " Search the files under the run location.
 set suffixesadd=.py             " Look for Python files.

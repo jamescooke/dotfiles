@@ -4,6 +4,7 @@ filetype off
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'chase/vim-ansible-yaml'
+Plug 'fatih/vim-go'             " Update is run by ansible: { 'do': ':GoUpdateBinaries' }
 Plug 'gorkunov/smartpairs.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -12,7 +13,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 syntax on

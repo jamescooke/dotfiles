@@ -103,9 +103,6 @@ map <leader>g :GFiles<cr>
 map <leader>t :Tags<cr>
 
 
-" SimpylFold settings
-let g:SimpylFold_docstring_preview = 1
-
 " Hop to next and previous white line
 map <leader>j }
 map <leader>k {

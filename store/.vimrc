@@ -82,7 +82,7 @@ set foldlevel=99                " Open out all folds by default.
 set colorcolumn=80              " Show the 80th char column.
 highlight ColorColumn ctermbg=5
 
-let mapleader = " "             " Try out space as leader
+let mapleader = " "             " Space as leader
 
 filetype on
 filetype indent on
@@ -103,9 +103,6 @@ map <leader>g :GFiles<cr>
 map <leader>t :Tags<cr>
 
 
-" Hop to next and previous white line
-map <leader>j }
-map <leader>k {
 " Copy current visual to system clipboard
 map <leader>c "+y
 " Wrap line to paragraph

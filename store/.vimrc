@@ -138,8 +138,8 @@ let @e = '^cf(assert jkf,xi ==jkA€kbjkj'
 
 " --- go dev ---
 " Lead for formatting
-let g:go_test_show_name = 1
 autocmd FileType go nnoremap <leader>f :GoFmt<cr>
 autocmd FileType go nnoremap <leader>y :GoLint<cr>
 autocmd FileType go nnoremap <leader>t :GoTest<cr>
 autocmd FileType go nnoremap <leader>T :GoTestFunc<cr>
+autocmd FileType go nnoremap <leader>i :GoImports<cr>

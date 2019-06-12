@@ -117,6 +117,8 @@ map <leader>l gt
 map <leader>s :sort<cr>
 " Output today's date in reverse order
 command! Today pu=strftime('%Y/%m/%d')
+" Generate a UUID using shell
+command! UUID read !uuidgen
 " Make jk work as escape
 :inoremap jk <esc>
 " Turn off escape to learn the new pattern

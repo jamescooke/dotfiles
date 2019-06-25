@@ -126,22 +126,37 @@ command! UUID read !uuidgen
 " Turn off Ex mode
 nnoremap Q <nop>
 
-" --- python dev ---
-" vim-flake8
+" === DEV PATTERNS ====
+
+" leader f = Format
+" leader y = Lint
+" leader i = Import
+" leader k = Test
+
+" --- python ---
+
+" Format
 autocmd FileType python map <buffer> <leader>f :call Flake8()<cr>
-" Leader for yapf
+" Lint
 autocmd FileType python nnoremap <leader>y :0,$!yapf<cr><C-o>
-" isort - can be used with selection or whole file
+" Import
 autocmd FileType python map <leader>i :Isort<cr>
-" Use a command for isort
 command! -range=% Isort :<line1>,<line2>! isort -
+
 " Macro --- convert unittest assert equal to simple assert ==
 let @e = '^cf(assert jkf,xi ==jkA€kbjkj'
 
-" --- go dev ---
-" Lead for formatting
+" --- golang ---
+
+" Format
 autocmd FileType go nnoremap <leader>f :GoFmt<cr>
+" Lint
 autocmd FileType go nnoremap <leader>y :GoLint<cr>
-autocmd FileType go nnoremap <leader>t :GoTest<cr>
-autocmd FileType go nnoremap <leader>T :GoTestFunc<cr>
+" Import
 autocmd FileType go nnoremap <leader>i :GoImports<cr>
+" Test
+autocmd FileType go nnoremap <leader>k :GoTest<cr>
+autocmd FileType go nnoremap <leader>K :GoTestFunc<cr>
+
+" Turn off CTRL-] for `go def` - not giving good results, tags are better
+let g:go_def_mapping_enabled = 0

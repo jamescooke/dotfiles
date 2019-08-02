@@ -98,13 +98,12 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
 alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias lrt='ls -lrt'
 alias beep='paplay /usr/share/sounds/ubuntu/stereo/system-ready.ogg'
 alias mtr='mtr -t'
-alias gfiles='git status -s | ag "[^\s]+$" -o'
-alias vdiff='vi $(gfiles | ag ".*\.dat$" -o)'
 alias vvv='source venv/bin/activate'
 
 # You may want to put all your additions into a separate file like

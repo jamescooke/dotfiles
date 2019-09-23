@@ -128,17 +128,17 @@ nnoremap Q <nop>
 
 " === DEV PATTERNS ====
 
-" leader f = Format
-" leader y = Lint
-" leader i = Import
-" leader k = Test
+" leader f = Format (yapf)
+" leader y = Lint   (flake8)
+" leader i = Import (isort)
+" leader k = Test   (pytest)
 
 " --- python ---
 
 " Format
-autocmd FileType python map <buffer> <leader>f :call Flake8()<cr>
-" Lint
 autocmd FileType python nnoremap <leader>y :0,$!yapf<cr><C-o>
+" Lint
+autocmd FileType python map <buffer> <leader>f :call Flake8()<cr>
 " Import
 autocmd FileType python map <leader>i :Isort<cr>
 command! -range=% Isort :<line1>,<line2>! isort -

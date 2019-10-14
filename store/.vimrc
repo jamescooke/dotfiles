@@ -102,6 +102,11 @@ map <leader>F :Files<cr>
 map <leader>g :GFiles<cr>
 map <leader>t :Tags<cr>
 
+" Ctags / tags
+" Temporary work around for adding tags location. See
+" https://github.com/jamescooke/dotfiles/issues/7
+:set tags^=./.git/tags;
+
 
 " Copy current visual to system clipboard
 map <leader>c "+y

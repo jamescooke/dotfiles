@@ -148,7 +148,7 @@ autocmd FileType python map <buffer> <leader>f :call Flake8()<cr>
 autocmd FileType python map <leader>i :Isort<cr>
 command! -range=% Isort :<line1>,<line2>! isort -
 
-" Macro --- convert unittest assert equal to simple assert ==
+" Macro: convert unittest assert equal to simple assert ==
 let @e = '^cf(assert jkf,xi ==jkA€kbjkj'
 
 " --- golang ---
@@ -165,3 +165,7 @@ autocmd FileType go nnoremap <leader>K :GoTestFunc<cr>
 
 " Turn off CTRL-] for `go def` - not giving good results, tags are better
 let g:go_def_mapping_enabled = 0
+
+" --- java family ---
+
+autocmd BufNewFile,BufRead Jenkinsfile setf groovy

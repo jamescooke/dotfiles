@@ -88,11 +88,12 @@ filetype on
 filetype indent on
 filetype plugin on
 
-" Turn on spelling for gitcommit messages, markdown and rst
+" Turn on spelling for gitcommit messages, markdown, rst and LaTeX
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal spell
 autocmd FileType mkd setlocal spell
 autocmd FileType rst setlocal spell
+autocmd FileType tex setlocal spell
 
 " FZF settings
 imap <c-x><c-o> <plug>(fzf-complete-line)

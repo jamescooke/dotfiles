@@ -169,4 +169,10 @@ let g:go_def_mapping_enabled = 0
 
 " --- java family ---
 
-autocmd BufNewFile,BufRead Jenkinsfile setf groovy
+" Set any Jenkinsfile* to be filetype=groovy
+autocmd BufNewFile,BufRead Jenkinsfile* setfiletype groovy
+
+" --- docker ---
+
+" Set any Dockerfile* to be filetype=dockerfile
+autocmd BufNewFile,BufRead Dockerfile* setfiletype dockerfile

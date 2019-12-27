@@ -101,7 +101,7 @@ fi
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
-alias lrt='ls -lrt'
+alias lrt='ls -hlrt'
 
 # even more aliases
 alias beep='paplay /usr/share/sounds/ubuntu/stereo/system-ready.ogg'

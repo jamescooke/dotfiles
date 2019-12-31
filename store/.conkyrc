@@ -1,23 +1,24 @@
 -- vim: ts=4 sw=4 noet ai cindent syntax=lua
 
 conky.config = {
-    alignment = 'top_left',
+    alignment = 'top_right',
     background = false,
     border_width = 1,
     cpu_avg_samples = 2,
-	default_color = 'white',
+    default_color = 'white',
     default_outline_color = 'white',
     default_shade_color = 'white',
+    double_buffer = true,
     draw_borders = false,
     draw_graph_borders = true,
     draw_outline = false,
     draw_shades = false,
     use_xft = true,
-    font = 'DejaVu Sans Mono:size=12',
-    gap_x = 5,
-    gap_y = 60,
+    font = 'DejaVu Sans Mono:size=10',
+    gap_x = 0,
+    gap_y = 30,
     minimum_height = 5,
-	minimum_width = 5,
+    minimum_width = 5,
     net_avg_samples = 2,
     no_buffers = true,
     out_to_console = false,
@@ -42,13 +43,19 @@ ${color grey}Frequency (in MHz):$color $freq
 ${color grey}Frequency (in GHz):$color $freq_g
 ${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
 ${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
-${color grey}CPU Usage:$color $cpu% ${cpubar 4}
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+$hr
+${color grey}CPU Usage:$color $cpu% ${cpubar 4}
+${cpugraph cpu1 50,133 5e7b7b d8deeb -t} ${cpugraph cpu2 50,133 5e7b7b d8deeb -t}
+${cpugraph cpu3 50,133 5e7b7b d8deeb -t} ${cpugraph cpu4 50,133 5e7b7b d8deeb -t}
+$hr
+${color grey}Networking:
+Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
+${color3}${downspeedgraph enp3s0 50,269 5e7b7b d8deeb}
+${color3}${upspeedgraph enp3s0 50,269 99c8e8 618094}
 $hr
 ${color grey}File systems:
  / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
-${color grey}Networking:
-Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
 $hr
 ${color grey}Name              PID   CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}

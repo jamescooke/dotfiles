@@ -14,10 +14,10 @@
     host = daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
 
     # General shortcuts for common tasks
-    fp = fetch -p
-    cv = commit -v
+    fp = fetch --prune
+    cv = commit --verbose
     cb = checkout -b
-    bd = branch -d
+    bd = branch --delete
     cane = commit --amend --no-edit
 
 [diff]

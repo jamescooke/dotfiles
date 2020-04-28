@@ -176,3 +176,16 @@ autocmd BufNewFile,BufRead Jenkinsfile* setfiletype groovy
 
 " Set any Dockerfile* to be filetype=dockerfile
 autocmd BufNewFile,BufRead Dockerfile* setfiletype dockerfile
+
+" --- cucumber ---
+
+" Set indentation to be 2 whitespaces
+autocmd FileType cucumber setlocal shiftwidth=2
+autocmd FileType cucumber setlocal softtabstop=2
+autocmd FileType cucumber setlocal spell
+
+" --- ansible ---
+
+" Set indentation to be 2 whitespaces
+autocmd FileType cucumber setlocal shiftwidth=2
+autocmd FileType cucumber setlocal softtabstop=2

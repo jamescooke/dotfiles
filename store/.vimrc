@@ -4,7 +4,6 @@ filetype off
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'chase/vim-ansible-yaml'
-Plug 'fatih/vim-go'             " Update is run by ansible: { 'do': ':GoUpdateBinaries' }
 Plug 'gorkunov/smartpairs.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -14,8 +13,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 call plug#end()
-
-let g:go_version_warning = 0
 
 syntax on
 set path=**                     " Search the files under the run location.
@@ -151,21 +148,6 @@ command! -range=% Isort :<line1>,<line2>! isort -
 
 " Macro: convert unittest assert equal to simple assert ==
 let @e = '^cf(assert jkf,xi ==jkA€kbjkj'
-
-" --- golang ---
-
-" Format
-autocmd FileType go nnoremap <leader>f :GoFmt<cr>
-" Lint
-autocmd FileType go nnoremap <leader>y :GoLint<cr>
-" Import
-autocmd FileType go nnoremap <leader>i :GoImports<cr>
-" Test
-autocmd FileType go nnoremap <leader>k :GoTest<cr>
-autocmd FileType go nnoremap <leader>K :GoTestFunc<cr>
-
-" Turn off CTRL-] for `go def` - not giving good results, tags are better
-let g:go_def_mapping_enabled = 0
 
 " --- java family ---
 

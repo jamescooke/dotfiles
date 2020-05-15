@@ -79,6 +79,11 @@ set foldlevel=99                " Open out all folds by default.
 set colorcolumn=80              " Show the 80th char column.
 highlight ColorColumn ctermbg=5
 
+" Check spelling settings on a colour config:
+" `:verbose highlight SpellBad`
+" Fix bad spelling highlight in RST files: default bg colour is too light.
+highlight SpellBad ctermbg=5
+
 let mapleader = " "             " Space as leader
 
 filetype on

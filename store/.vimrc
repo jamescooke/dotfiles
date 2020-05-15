@@ -62,6 +62,8 @@ set ignorecase smartcase        " Case insensitive searching when the string
 set diffopt+=vertical           " Force git diffs to be shown vertically, even
                                 " on narrow windows.
 
+set updatetime=100              " Quicker update for gitgutter
+
 " Turn off highlighting when dropping into insert mode, and turn back on again
 " when leaving
 autocmd InsertEnter * :setlocal nohlsearch

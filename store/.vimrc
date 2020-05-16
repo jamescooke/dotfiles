@@ -79,6 +79,9 @@ set foldlevel=99                " Open out all folds by default.
 set colorcolumn=80              " Show the 80th char column.
 highlight ColorColumn ctermbg=5
 
+" Turn off vim-gitgutter's sign column
+highlight! link SignColumn LineNr
+
 let mapleader = " "             " Space as leader
 
 filetype on

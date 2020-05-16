@@ -62,6 +62,8 @@ set ignorecase smartcase        " Case insensitive searching when the string
 set diffopt+=vertical           " Force git diffs to be shown vertically, even
                                 " on narrow windows.
 
+set updatetime=100              " Quicker update for gitgutter
+
 " Turn off highlighting when dropping into insert mode, and turn back on again
 " when leaving
 autocmd InsertEnter * :setlocal nohlsearch
@@ -76,11 +78,20 @@ set nrformats-=octal            " Turn off octal increment / decrement so that
 
 set foldlevel=99                " Open out all folds by default.
 
+" === Colour rules ===
+
 set colorcolumn=80              " Show the 80th char column.
 highlight ColorColumn ctermbg=5
 
 " Turn off vim-gitgutter's sign column
 highlight! link SignColumn LineNr
+
+" Check spelling settings on a colour config:
+" `:verbose highlight SpellBad`
+" Fix bad spelling highlight in RST files: default bg colour is too light.
+highlight SpellBad ctermbg=5
+
+" === Leader combos ===
 
 let mapleader = " "             " Space as leader
 

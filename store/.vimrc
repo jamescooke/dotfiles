@@ -89,7 +89,10 @@ highlight! link SignColumn LineNr
 " Check spelling settings on a colour config:
 " `:verbose highlight SpellBad`
 " Fix bad spelling highlight in RST files: default bg colour is too light.
-highlight SpellBad ctermbg=5
+" 5 = fg colour of markdown titles and links
+" 4 = blue like this text. Hard to read purple on blue.
+" 3 = yellow
+highlight SpellBad ctermbg=3
 
 " === Leader combos ===
 

@@ -186,5 +186,11 @@ autocmd FileType cucumber setlocal spell
 " --- ansible ---
 
 " Set indentation to be 2 whitespaces
-autocmd FileType cucumber setlocal shiftwidth=2
-autocmd FileType cucumber setlocal softtabstop=2
+autocmd FileType ansible setlocal shiftwidth=2
+autocmd FileType ansible setlocal softtabstop=2
+
+" --- RST ---
+
+" Set indentation to be 4 spaces, same as Python rather than 3
+autocmd FileType rst setlocal shiftwidth=4
+autocmd FileType rst setlocal softtabstop=4

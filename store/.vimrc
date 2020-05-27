@@ -102,7 +102,8 @@ filetype on
 filetype indent on
 filetype plugin on
 
-" Turn on spelling for gitcommit messages, markdown, rst and LaTeX
+" Turn on spelling for gitcommit messages, markdown, rst and LaTeX, spelling
+" turned on for Ledger in its own section below
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal spell
 autocmd FileType mkd setlocal spell
@@ -194,3 +195,9 @@ autocmd FileType ansible setlocal softtabstop=2
 " Set indentation to be 4 spaces, same as Python rather than 3
 autocmd FileType rst setlocal shiftwidth=4
 autocmd FileType rst setlocal softtabstop=4
+
+" --- Ledger ---
+
+autocmd BufRead,BufNewFile *.dat setfiletype ledger
+autocmd FileType ledger setlocal comments=b:;
+autocmd FileType ledger setlocal spell

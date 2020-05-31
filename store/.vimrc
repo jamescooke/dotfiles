@@ -109,6 +109,7 @@ autocmd FileType markdown setlocal spell
 autocmd FileType mkd setlocal spell
 autocmd FileType rst setlocal spell
 autocmd FileType tex setlocal spell
+map <leader>p :set spell!<cr>
 
 " FZF settings
 imap <c-x><c-o> <plug>(fzf-complete-line)

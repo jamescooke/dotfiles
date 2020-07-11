@@ -10,6 +10,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'nvie/vim-flake8'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 call plug#end()

@@ -114,6 +114,7 @@ map <leader>p :set spell!<cr>
 " FZF settings
 imap <c-x><c-o> <plug>(fzf-complete-line)
 map <leader>a :Ag<cr>
+map <leader>A :Ag <c-r><c-w><cr>
 map <leader>b :Buffers<cr>
 map <leader>F :Files<cr>
 map <leader>g :GFiles<cr>

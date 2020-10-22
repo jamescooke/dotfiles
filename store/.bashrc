@@ -104,7 +104,7 @@ alias ll='ls -alF'
 alias lrt='ls -hlrt'
 
 # even more aliases
-alias beep='paplay /usr/share/sounds/ubuntu/stereo/system-ready.ogg'
+alias beep='paplay /usr/share/sounds/gnome/default/alerts/bark.ogg'
 alias cal='cal -y'
 alias mtr='mtr -t'
 alias vvv='source venv/bin/activate'

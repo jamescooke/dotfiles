@@ -1,2 +1,5 @@
 #!/bin/bash
-.git/hooks/ctags.sh >/dev/null 2>&1 &
+
+set -eo pipefail
+
+setpid .git/hooks/ctags.sh >/dev/null 2>&1

@@ -2,4 +2,4 @@
 
 set -eo pipefail
 
-setsid .git/hooks/ctags.sh >/dev/null 2>&1
+setsid .git/hooks/ctags.sh >/dev/null 2>&1 &

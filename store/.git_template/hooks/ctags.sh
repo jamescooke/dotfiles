@@ -1,5 +1,6 @@
 #!/bin/bash
-set -e
+
+set -eo pipefail
 
 cd "$(git rev-parse --git-dir)/.."
 trap 'rm -f .git/$$.tags' EXIT

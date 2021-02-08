@@ -125,6 +125,8 @@ map <leader>t :Tags<cr>
 " https://github.com/jamescooke/dotfiles/issues/7
 :set tags^=./.git/tags;
 
+" Fugitive
+map <leader>G :G<cr>
 
 " Copy current visual to system clipboard
 map <leader>c "+y

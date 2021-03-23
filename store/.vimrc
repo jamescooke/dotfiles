@@ -153,10 +153,9 @@ nnoremap Q <nop>
 
 " === DEV PATTERNS ====
 
-" leader f = Format (yapf|black)
-" leader y = Lint   (flake8)
-" leader i = Import (isort)
-" leader k = Test   (pytest)
+" <leader>y = Format (yapf|black)
+" <leader>f = Lint   (flake8)
+" <leader>i = Import (isort)
 
 " --- python ---
 

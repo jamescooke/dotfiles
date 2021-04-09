@@ -8,6 +8,7 @@ Plug 'gorkunov/smartpairs.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'nvie/vim-flake8'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
@@ -124,6 +125,12 @@ map <leader>t :Tags<cr>
 " Temporary work around for adding tags location. See
 " https://github.com/jamescooke/dotfiles/issues/7
 :set tags^=./.git/tags;
+
+" Dispatch
+map <leader>m :Make<cr>
+" - load current build into quickfix list
+map <leader>q :Copen<cr>
+map <leader>Q :cclose<cr>
 
 " Fugitive
 map <leader>G :G<cr>

@@ -7,6 +7,7 @@ Plug 'chase/vim-ansible-yaml'
 Plug 'gorkunov/smartpairs.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'mbbill/undotree'
 Plug 'nvie/vim-flake8'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -95,9 +96,8 @@ highlight! link SignColumn LineNr
 " 3 = yellow
 highlight SpellBad ctermbg=3
 
-" === Leader combos ===
-
-let mapleader = " "             " Space as leader
+" Set space as leader
+let mapleader = " "
 
 filetype on
 filetype indent on
@@ -112,7 +112,23 @@ autocmd FileType rst setlocal spell
 autocmd FileType tex setlocal spell
 map <leader>p :set spell!<cr>
 
-" FZF settings
+" === Plugin settings ===
+
+" --- Ctags / tags ---
+" Temporary work around for adding tags location. See
+" https://github.com/jamescooke/dotfiles/issues/7
+:set tags^=./.git/tags;
+
+" --- Dispatch ---
+map <leader>m :Make<cr>
+" Load current build into quickfix list
+map <leader>q :Copen<cr>
+map <leader>Q :cclose<cr>
+
+" --- Fugitive ---
+map <leader>G :G<cr>
+
+" --- FZF ---
 imap <c-x><c-o> <plug>(fzf-complete-line)
 map <leader>a :Ag<cr>
 map <leader>A :Ag <c-r><c-w><cr>
@@ -121,19 +137,10 @@ map <leader>F :Files<cr>
 map <leader>g :GFiles<cr>
 map <leader>t :Tags<cr>
 
-" Ctags / tags
-" Temporary work around for adding tags location. See
-" https://github.com/jamescooke/dotfiles/issues/7
-:set tags^=./.git/tags;
+" --- undotree ---
+nnoremap <F5> :UndotreeToggle<cr>
 
-" Dispatch
-map <leader>m :Make<cr>
-" - load current build into quickfix list
-map <leader>q :Copen<cr>
-map <leader>Q :cclose<cr>
-
-" Fugitive
-map <leader>G :G<cr>
+" === General shortcuts ===
 
 " Copy current visual to system clipboard
 map <leader>c "+y

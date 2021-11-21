@@ -107,7 +107,7 @@ alias lrt='ls -hlrt'
 alias beep='paplay /usr/share/sounds/gnome/default/alerts/bark.ogg'
 alias cal='cal -y'
 alias mtr='mtr -t'
-alias vvv='source venv/bin/activate'
+alias vvv='source ~/bin/vload'
 
 # Adjust ag to always search hidden files
 alias ag='ag --hidden --ignore .git'

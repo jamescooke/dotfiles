@@ -184,6 +184,14 @@ autocmd FileType python map <buffer> <leader>f :call Flake8()<cr>
 autocmd FileType python map <leader>i :Isort<cr>
 command! -range=% Isort :<line1>,<line2>! isort -
 
+" Lint -> Import -> Format
+function! LintAllPython() abort
+    normal "mQ"
+    call Flake8()
+    command Isort
+    normal "'Q"
+endfunction
+
 " Macro: convert unittest assert equal to simple assert ==
 let @e = '^cf(assert jkf,xi ==jkA€kbjkj'
 

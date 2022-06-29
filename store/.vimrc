@@ -186,11 +186,36 @@ command! -range=% Isort :<line1>,<line2>! isort -
 
 " Lint -> Import -> Format
 function! LintAllPython() abort
-    normal "mQ"
+    " Save the file
+    write
+    " Set a mark where the current buffer is located.
+    normal! "mQ"
+    " Run `isort` on file - do this first because it's more tolerant of syntax
+    " errors and can prevent flake8 from complaining extra lines etc.
+    " * use '-quiet' for quiet output
+    " * '%' for file in current buffer
+    silent !echo "\nDoing isort..."
+    execute "!isort --quiet " . bufname("%")
+    silent !echo "\nDoing black..."
+    execute "!black --quiet " . bufname("%")
+    " Reload the file and move back to the mark where all this started.
+    normal! "e`Q"
+    " Run flake8 on current file by using the provided 'Flake8' function
     call Flake8()
-    command Isort
-    normal "'Q"
+    " To see if flake8 failed, check if the quickfix list is open
+    " This snippet from Reddit... use len() to get a truthy number for list
+    if len(filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"'))
+        " Found a quickfix list, exit
+        redraw!
+        return 1
+    endif
 endfunction
+
+" Run LintAllPython function
+" * <cr> to run the call
+" * Second <cr> to press enter after isort
+" * Third <cr> to press enter after black
+autocmd FileType python nnoremap <leader>r :call LintAllPython()<cr><cr><cr>
 
 " Macro: convert unittest assert equal to simple assert ==
 let @e = '^cf(assert jkf,xi ==jkA€kbjkj'

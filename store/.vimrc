@@ -186,20 +186,22 @@ command! -range=% Isort :<line1>,<line2>! isort -
 
 " Lint -> Import -> Format
 function! LintAllPython() abort
+    silent !clear
     " Save the file
     write
-    " Set a mark where the current buffer is located.
-    normal! "mQ"
     " Run `isort` on file - do this first because it's more tolerant of syntax
     " errors and can prevent flake8 from complaining extra lines etc.
     " * use '-quiet' for quiet output
     " * '%' for file in current buffer
+    " TODO make newline work
     silent !echo "\nDoing isort..."
     execute "!isort --quiet " . bufname("%")
     silent !echo "\nDoing black..."
     execute "!black --quiet " . bufname("%")
-    " Reload the file and move back to the mark where all this started.
-    normal! "e`Q"
+    " Update buffer with newly formatted file
+    edit!
+    " TODO make git gutter update after moving / isorting
+    " call gitgutter#process_buffer(bufnr(''), 1)
     " Run flake8 on current file by using the provided 'Flake8' function
     call Flake8()
     " To see if flake8 failed, check if the quickfix list is open

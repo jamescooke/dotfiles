@@ -135,7 +135,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# --- FZF ---
+
 # Run FZF in a tmux split when possible
 export FZF_TMUX=1
+# Do not include python directories in alt-c cd search
+# This is based on the default search command here
+# https://github.com/junegunn/fzf/blob/205f885d6941eac47004779d9125df1463458fdd/shell/key-bindings.bash#L42
+# but with extra exclusions added
+export FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune -o -type d -not -name '__pycache__' -not -name 'venv' -not -name 'venv??' -not -path '*/venv/*' -not -path '*/venv??/*' -print 2> /dev/null | cut -b3-"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

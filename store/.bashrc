@@ -74,12 +74,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Automatically start Tmux if connection came in on SSH and tmux is not already
-# running.
-if [ "$SSH_CONNECTION" ]; then
-    [[ -z "$TMUX" ]] && exec tmux
-fi
-
 # Switch off ^s flow control
 stty -ixon
 

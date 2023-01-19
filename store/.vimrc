@@ -196,8 +196,15 @@ function! LintAllPython() abort
     " TODO make newline work
     silent !echo "\nDoing isort..."
     execute "!isort --quiet " . bufname("%")
-    silent !echo "\nDoing black..."
-    execute "!black --quiet " . bufname("%")
+    if executable("yapf")
+        silent !echo "\nDoing yapf..."
+        execute "!yapf --in-place " . bufname("%")
+    elseif executable("black")
+        silent !echo "\nDoing black..."
+        execute "!black --quiet " . bufname("%")
+    else
+        silent !echo "\n***NO LINTER FOUND***"
+    endif
     " Update buffer with newly formatted file
     edit!
     " TODO make git gutter update after moving / isorting

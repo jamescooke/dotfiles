@@ -18,7 +18,10 @@
     cv = commit --verbose
     cb = checkout -b
     bd = branch --delete
+    bl = branch --list
+    bla = branch --list --all
     cane = commit --amend --no-edit
+    sc = switch --create
 
 [diff]
     tool = meld
@@ -28,11 +31,33 @@
 
 [init]
     templatedir = ~/.git_template
+    defaultBranch = main
 
 [url "ssh://git@github.com/"]
     insteadOf = https://github.com/
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    frag = magenta bold
+    meta = yellow bold
+    new = green bold
+    old = red bold
+    whitespace = red reverse
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+
+[advice]
+    statusHints = false

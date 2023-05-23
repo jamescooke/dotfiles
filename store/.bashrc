@@ -77,6 +77,13 @@ esac
 # Switch off ^s flow control
 stty -ixon
 
+# ----------------------------------------------------------------- ENVIRONMENT
+
+export EDITOR='vim'
+
+# From "Boost your git DX", but tuned down because old less version:
+export LESS='--chop-long-lines --HILITE-UNREAD --ignore-case --jump-target=4 --LONG-PROMPT --no-init --quit-if-one-screen --RAW-CONTROL-CHARS --window=-4'
+
 # --------------------------------------------------------------------- ALIASES
 
 # enable color support of ls and also add handy aliases

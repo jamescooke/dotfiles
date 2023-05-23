@@ -1,0 +1,3 @@
+# Ignore files added by docker to the .docker directory
+.t*
+buildx/

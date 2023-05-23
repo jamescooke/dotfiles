@@ -176,6 +176,9 @@ nnoremap Q <nop>
 
 " --- python ---
 
+" Prevent colon ':' from indenting the current line
+" See https://stackoverflow.com/a/37889460/1286705
+autocmd FileType python setlocal indentkeys-=<:>
 " Format
 autocmd FileType python nnoremap <leader>y :0,$!blapf<cr><C-o>
 " Lint

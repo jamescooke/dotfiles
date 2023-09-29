@@ -2,18 +2,18 @@ set nocompatible                " vim, not vi
 filetype off
 
 call plug#begin()
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'       " Git indicators in the gutter
 Plug 'chase/vim-ansible-yaml'
+Plug 'christoomey/vim-tmux-runner'  " Run jobs in tmux splits
 Plug 'gorkunov/smartpairs.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'nvie/vim-flake8'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-tbone'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-fugitive'           " All the git ':G' goodness
+Plug 'tpope/vim-rhubarb'            " GBrowse plugin for fugitive
+Plug 'tpope/vim-unimpaired'         " Navigations pairs like ']f', '[f'
+Plug 'tpope/vim-vinegar'            " Better directory browser via '-'
 call plug#end()
 
 syntax on
@@ -139,6 +139,17 @@ map <leader>t :Tags<cr>
 " --- undotree ---
 nnoremap <F5> :UndotreeToggle<cr>
 
+" --- VTR: Vim Tmux Runner ---
+let g:VtrOrientation = "h"                  " split to the right of current pane
+let g:VtrPercentage = 50                    " use 50 % of the screen width
+let g:vtr_filetype_runner_overrides = {
+    \ 'python': 'pytest {file}',
+    \ 'markdown': 'frogmouth {file}'
+    \ }
+" Send file to runner as above, but then focus the runner window *without*
+" zooming (as per the '!' appended to focus)
+map <leader>m :VtrSendFile!<cr>:VtrFocusRunner!<cr>
+
 " === General shortcuts ===
 
 " Copy current visual to system clipboard
@@ -169,6 +180,7 @@ nnoremap Q <nop>
 " <leader>y = Format (yapf|black)
 " <leader>f = Lint   (flake8)
 " <leader>i = Import (isort)
+" <leader>m = Make   (pytest, frogmouth, hledger) - handled by VTR
 
 " --- python ---
 

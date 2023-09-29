@@ -9,9 +9,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'nvie/vim-flake8'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 call plug#end()
@@ -122,18 +122,14 @@ map <leader>P :set paste!<cr>
 " https://github.com/jamescooke/dotfiles/issues/7
 :set tags^=./.git/tags;
 
-" --- Dispatch ---
-map <leader>m :Make<cr>
-" Load current build into quickfix list
-map <leader>q :Copen<cr>
-map <leader>Q :cclose<cr>
-
 " --- Fugitive ---
 map <leader>G :G<cr>
+" Search for files known to git is in FZF
 
 " --- FZF ---
 imap <c-x><c-o> <plug>(fzf-complete-line)
 map <leader>a :Ag<cr>
+" Search for word under cursor
 map <leader>A :Ag <c-r><c-w><cr>
 map <leader>b :Buffers<cr>
 map <leader>F :Files<cr>
@@ -231,6 +227,8 @@ autocmd FileType python nnoremap <leader>r :call LintAllPython()<cr><cr><cr>
 
 " Macro: convert unittest assert equal to simple assert ==
 let @e = '^cf(assert jkf,xi ==jkA€kbjkj'
+" Macro: add a trace point with ipdb
+let @i = 'Oimport ipdbipdb.set_trace()jk'
 
 " --- java family ---
 

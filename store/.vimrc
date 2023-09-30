@@ -137,7 +137,7 @@ map <leader>g :GFiles<cr>
 map <leader>t :Tags<cr>
 
 " --- undotree ---
-nnoremap <F5> :UndotreeToggle<cr>
+nnoremap <leader>U :UndotreeToggle<cr>
 
 " --- VTR: Vim Tmux Runner ---
 let g:VtrOrientation = "h"                  " split to the right of current pane
@@ -146,9 +146,14 @@ let g:vtr_filetype_runner_overrides = {
     \ 'python': 'pytest {file}',
     \ 'markdown': 'frogmouth {file}'
     \ }
-" Send file to runner as above, but then focus the runner window *without*
-" zooming (as per the '!' appended to focus)
-map <leader>m :VtrSendFile!<cr>:VtrFocusRunner!<cr>
+" Send file to runner as above
+map <leader>m :VtrOpenRunner<cr>:VtrSendFile<cr>
+" If the runner pane is closed, then it might need resetting.
+map <leader>M :VtrUnsetRunnerPane<cr>:VtrOpenRunner<cr>:VtrSendFile<cr>
+" Close the runner pane
+map <leader>d :VtrKillRunner<cr>
+" Focus runner pane for hacking
+map <leader>Q :VtrFocusRunner!<cr>
 
 " === General shortcuts ===
 
